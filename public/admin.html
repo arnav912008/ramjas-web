@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin | Ramjas College</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FFD84D">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="/img/favicon-64.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preload" href="/fonts/archivo-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="/"><img src="/img/logo.webp" alt="Ramjas College emblem" width="68" height="68"><span><b>Ramjas College</b><small>Student resources</small></span></a>
+  <nav class="tabs" aria-label="Sections"><a class="tab" href="/">Papers</a><a class="tab" href="/grievance">Grievance</a><a class="tab" href="/admin" aria-current="page">Admin</a></nav>
+</header>
+<div class="wrap content">
+  <main class="sheet" id="main" tabindex="-1">
+    <h1>Admin</h1>
+    <section id="login" class="narrow" hidden aria-labelledby="login-h">
+      <h2 id="login-h">Sign in</h2>
+      <form id="loginForm" novalidate>
+        <div class="field"><label for="u">Username</label><input id="u" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required></div>
+        <div class="field"><label for="p">Password</label><input id="p" type="password" autocomplete="current-password" required></div>
+        <button class="btn block" id="go" type="submit">Sign in</button>
+        <div id="lmsg" class="msg err" role="alert"></div>
+      </form>
+    </section>
+
+    <div id="panel" hidden>
+      <div class="sub-bar">
+        <div class="sub-tabs" role="tablist" aria-label="Admin sections">
+          <button type="button" class="sub-tab" role="tab" id="tab-up" aria-controls="pane-up" aria-selected="true">Upload paper</button>
+          <button type="button" class="sub-tab" role="tab" id="tab-man" aria-controls="pane-man" aria-selected="false" tabindex="-1">Manage papers</button>
+        </div>
+        <button type="button" class="sub-tab push" id="out">Sign out</button>
+      </div>
+
+      <section id="pane-up" role="tabpanel" aria-labelledby="tab-up">
+        <form id="upForm" class="upload-grid" novalidate>
+          <div>
+          <div class="field"><label for="c">Course</label><input id="c" type="text" list="cl" maxlength="80" placeholder="e.g. B.Sc. Physics (Hons)" autocomplete="off" required><datalist id="cl"></datalist></div>
+          <div class="grid2">
+            <div class="field"><label for="s">Semester</label><select id="s"></select></div>
+            <div class="field"><label for="y">Year</label><input id="y" type="number" inputmode="numeric" min="2000" required></div>
+          </div>
+          <div class="field"><label for="n">Subject (paper name)</label><input id="n" type="text" maxlength="120" placeholder="e.g. Mechanics" autocomplete="off" required></div>
+          </div>
+          <div>
+          <div class="field">
+            <label for="f">File</label>
+            <div class="drop" id="drop"><input id="f" type="file" accept="application/pdf,image/jpeg,image/png" required><p class="hint">PDF, JPG or PNG, up to 15 MB. You can also drop a file here.</p></div>
+          </div>
+          <button class="btn" id="up" type="submit">Upload paper</button>
+          <div id="umsg" class="msg" role="status"></div>
+          </div>
+        </form>
+      </section>
+
+      <section id="pane-man" role="tabpanel" aria-labelledby="tab-man" hidden>
+        <div class="panel-head">
+          <p class="count" id="acount" role="status"></p>
+          <input id="aq" type="search" placeholder="Search uploaded papers" aria-label="Search uploaded papers" autocomplete="off">
+        </div>
+        <div id="list"></div>
+        <div id="dmsg" class="msg" role="status"></div>
+      </section>
+    </div>
+
+    <dialog id="confirm" aria-labelledby="cf-h">
+      <h2 id="cf-h">Delete this paper?</h2>
+      <p id="cf-text"></p>
+      <div class="actions">
+        <button type="button" class="btn alt" id="cf-no">Keep paper</button>
+        <button type="button" class="btn warn" id="cf-yes">Delete paper</button>
+      </div>
+    </dialog>
+  </main>
+</div>
+<footer><div class="wrap">Ramjas College student resources</div></footer>
+<script src="/js/admin.js" defer></script>
+</body>
+</html>
