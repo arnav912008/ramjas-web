@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Question papers | Ramjas College</title>
+<meta name="description" content="Previous year question papers for Ramjas College students. Filter by course, subject, semester or year, then view or download.">
+<meta name="theme-color" content="#15100e">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="/img/favicon-64.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preload" href="/fonts/archivo-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="bg" id="bg" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="/"><img src="/img/logo.webp" alt="Ramjas College emblem" width="68" height="68"><span><b>Ramjas College</b><small>Student resources</small></span></a>
+  <nav class="tabs" aria-label="Sections"><a class="tab" href="/" aria-current="page">Papers</a><a class="tab" href="/grievance">Grievance</a></nav>
+</header>
+<div class="wrap content">
+  <main class="sheet" id="main" tabindex="-1">
+    <h1>Question papers</h1>
+    <p class="lede">Previous year papers. Filter by course, subject, semester or year.</p>
+    <form class="filters" id="filters" role="search" aria-label="Find a paper">
+      <div class="field f-q"><label for="q">Search</label><input id="q" type="search" placeholder="Subject or course" autocomplete="off" maxlength="80"></div>
+      <div class="field f-wide"><label for="course">Course</label><select id="course"><option value="">All courses</option></select></div>
+      <div class="field f-wide"><label for="subject">Subject</label><select id="subject"><option value="">All subjects</option></select></div>
+      <div class="field f-half"><label for="sem">Semester</label><select id="sem"><option value="">All</option></select></div>
+      <div class="field f-half"><label for="year">Year</label><select id="year"><option value="">All</option></select></div>
+      <div class="field f-wide"><label for="sort">Sort by</label><select id="sort">
+        <option value="year-desc">Newest first</option><option value="year-asc">Oldest first</option>
+        <option value="subject">Subject A to Z</option><option value="course">Course A to Z</option><option value="sem">Semester 1 to 8</option></select></div>
+    </form>
+    <div class="bar"><p class="count" id="count" role="status" aria-live="polite"></p><button type="button" class="link-btn" id="clear" hidden>Clear filters</button></div>
+    <div id="list"></div>
+  </main>
+</div>
+<footer><div class="wrap foot"><span>Ramjas College student resources</span><span>Made by <a href="https://www.linkedin.com/in/arnav-goyal-002aa41b3" target="_blank" rel="noopener noreferrer">Arnav Goyal</a></span></div></footer>
+<script src="/js/slides.js" defer></script>
+<script src="/js/app.js" defer></script>
+</body>
+</html>
